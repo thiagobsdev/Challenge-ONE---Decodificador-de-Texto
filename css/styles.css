@@ -134,11 +134,15 @@ textarea::placeholder {
     text-transform: uppercase;
     font-family: Inter;
     font-size: 32px;
-    
+
     line-height: 48px;
     letter-spacing: 0em;
     text-align: left;
 
+}
+
+textarea:focus::placeholder {
+    color: transparent;
 }
 
 .textoArea1 {
@@ -176,7 +180,7 @@ textarea::placeholder {
     background-color: #0A3871;
     font-family: Inter;
     font-size: 16px;
- 
+
     line-height: 19px;
     letter-spacing: 1px;
     text-align: center;
@@ -187,14 +191,14 @@ textarea::placeholder {
     background-color: #D8DFE8;
     font-family: Inter;
     font-size: 16px;
- 
+
     line-height: 19px;
     letter-spacing: 1px;
     text-align: center;
     color: #0A3871;
     font-family: 'Inter';
     font-style: normal;
-    
+
 }
 
 .textoArea1 textarea {
