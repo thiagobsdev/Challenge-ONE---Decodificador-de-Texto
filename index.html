@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,42 @@
     <title>Desafio decodificador</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <main>
         <section>
-            <div>
+            <div class="ladoA">
                 <img src="assets/Logo.svg" alt="">
+                <div class="textoArea1">
+                    <textarea id="texto1" name="texto1" placeholder="Digite o seu texto aqui !"></textarea>
+                </div>
+                <div class="containerRegras">
+                    <div class="regras">
+                        <img src="assets/inputtexto.svg" alt="">
+                        <p>Apenas letras minúsculas e sem acento.</p>
+                    </div>
+                    <div class="containerbotoes">
+                        <button type="submit" value="criptografar" id="criptografar">Criptografar</button>
+                        <button type="submit" value="descriptografar" id="descriptografar">Descriptografar</button>
+                    </div>
+                </div>
             </div>
-            <div>
-                <img  class="img2" src="assets/img2.svg" alt="">
+            <div class="ladoB">
+                <div class="ladoBtext displaynone">
+                    <textarea name="textcript" id="textcript" cols="30" rows="10"></textarea>
+                </div>
+                <div class="ladoBImage">
+                    <div class="ladoBpadrao">
+                        <img class="img2" src="assets/img2.svg" alt="">
+                        <h2>Nenhuma mensagem encontrada</h2>
+                        <p>Digite um texto que você deseja criptografar ou descriptografar.</p>
+                    </div>
+                </div>
+
             </div>
-                
+
         </section>
-    </main>  
+    </main>
 </body>
+
 </html>
