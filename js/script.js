@@ -41,6 +41,7 @@ function criptografar() {
         }
 
         RealizarCriptografia(texto.value);
+        document.querySelector("#texto1").value = ""
 
     } else {
         alert("Digite um texto para ser criptografado")
@@ -90,8 +91,9 @@ function RealizarCriptografia(texto) {
 
 
     });
-
+    
     textoCriptografado.value = textoCriptografadoFinal;
+    
 }
 
 function copiarTexto() {
@@ -99,4 +101,50 @@ function copiarTexto() {
     textoCopiado.select();
     textoCopiado.setSelectionRange(0, 99999)
     navigator.clipboard.writeText(textoCopiado.value);
+    document.getElementById("textcript").value = "Nenhuma mensagem!"
+}
+
+
+function Descriptografar (  ) {
+    let campoTextoParaDescriptografar = document.querySelector("#texto1").value;
+    let campoTextoDescriptografado = document.querySelector('#textcript');
+    let chaves = ['a', 'e', 'i', 'o', 'u'];
+    let textoDescriptografadoFinal = "";
+
+    let textoCriptografado = campoTextoParaDescriptografar.split("");
+
+    for (let index = 0; index < textoCriptografado.length; index++) {
+       
+        switch (textoCriptografado[index]) {
+            case 'a':
+                textoDescriptografadoFinal += textoCriptografado[index]
+                index++
+                break;
+            case "e":
+                textoDescriptografadoFinal += textoCriptografado[index]
+                index +=4
+                break;
+            case "i":
+                textoDescriptografadoFinal += textoCriptografado[index]
+                index +=3
+                break;
+            case "o":
+                textoDescriptografadoFinal += textoCriptografado[index]
+                index +=3
+                break;
+            case "u":
+                textoDescriptografadoFinal += textoCriptografado[index]
+                index +=3
+                
+                break;
+
+            default:
+                textoDescriptografadoFinal += textoCriptografado[index]
+                break;
+        }
+    }
+
+    campoTextoDescriptografado.value = textoDescriptografadoFinal;
+    document.querySelector("#texto1").value = ""
+
 }
