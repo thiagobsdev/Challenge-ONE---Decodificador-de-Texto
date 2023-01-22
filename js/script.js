@@ -23,7 +23,10 @@ function criptografar() {
 
     if (texto.value !== "") {
 
+
+
         let campoCriptografado = document.querySelector('.ladoBtext')
+
         const imagem = document.querySelector('.ladoBpadrao');
 
         if (campoCriptografado.classList.contains('displaynone')) {
@@ -35,12 +38,58 @@ function criptografar() {
             campoCriptografado.classList.remove('displaynone')
             campoCriptografado.classList.add('displayYes')
 
-        } else {
-            console.log('Deu errado')
         }
+
+        RealizarCriptografia(texto.value);
 
     } else {
         alert("Digite um texto para ser criptografado")
     }
 
+}
+
+
+function RealizarCriptografia(texto) {
+
+    let textoCriptografado = document.querySelector('#textcript');
+
+    let chaves = ['a', 'e', 'i', 'o', 'u'];
+    let textoCriptografadoFinal = "";
+
+    let textoOriginal = texto.split("");
+
+    textoOriginal.forEach(element => {
+
+        switch (element) {
+            case 'a':
+                element = "ai"
+                textoCriptografadoFinal += element;
+                break;
+            case "e":
+                element = "enter"
+                textoCriptografadoFinal += element;
+                break;
+            case "i":
+                element = "imes"
+                textoCriptografadoFinal += element;
+                break;
+            case "o":
+                element = "ober"
+                textoCriptografadoFinal += element;
+                break;
+            case "u":
+                element = "ufat"
+                textoCriptografadoFinal += element;
+                break;
+
+            default:
+
+                textoCriptografadoFinal += element;
+                break;
+        }
+
+
+    });
+
+    textoCriptografado.value = textoCriptografadoFinal;
 }
