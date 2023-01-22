@@ -93,3 +93,10 @@ function RealizarCriptografia(texto) {
 
     textoCriptografado.value = textoCriptografadoFinal;
 }
+
+function copiarTexto() {
+    let textoCopiado = document.getElementById("textcript");
+    textoCopiado.select();
+    textoCopiado.setSelectionRange(0, 99999)
+    navigator.clipboard.writeText(textoCopiado.value);
+}
